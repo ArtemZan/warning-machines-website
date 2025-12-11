@@ -4,7 +4,6 @@
     height: 170px;
     padding: 0;
     border: none;
-
 }
 
 .card--service img {
@@ -39,9 +38,19 @@
     gap: 20px;
 }
 
+@media screen and (max-width: 800px) {
+    .section#services {
+        flex-direction: column;
+    }
+
+    .grid--services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 
 .section#contact .field input,
 .section#contact .field textarea {
-        background-color: white;
+    background-color: white;
     color: black;
 }
