@@ -38,3 +38,10 @@
     display: flex;
     gap: 20px;
 }
+
+
+.section#contact .field input,
+.section#contact .field textarea {
+        background-color: white;
+    color: black;
+}

@@ -91,6 +91,8 @@ const smtpPass = process.env.SMTP_PASS;
 const smtpSecure = process.env.SMTP_SECURE === 'true';
 const mailFrom = process.env.MAIL_FROM;
 const mailTo = process.env.MAIL_TO;
+const googleClientId = process.env.GOOGLE_CLIENT_ID;
+const googleRedirectUri = process.env.GOOGLE_REDIRECT_URI;
 
 console.log(process.env.SMTP_HOST, process.env.SMTP_PORT, process.env.SMTP_USER, process.env.SMTP_PASS, process.env.SMTP_SECURE, process.env.MAIL_FROM, process.env.MAIL_TO);
 
@@ -117,6 +119,23 @@ app.get('/api/content', (_req: Request, res: Response) => {
     highlights,
     articles,
   });
+});
+
+app.get('/api/auth/google', (_req: Request, res: Response) => {
+  if (!googleClientId || !googleRedirectUri) {
+    return res.status(500).json({ error: 'Google OAuth is not configured on the server.' });
+  }
+
+  const params = new URLSearchParams({
+    client_id: googleClientId,
+    redirect_uri: googleRedirectUri,
+    response_type: 'code',
+    scope: 'openid email profile',
+    access_type: 'offline',
+    prompt: 'consent',
+  });
+
+  res.redirect(`https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`);
 });
 
 app.post('/api/contact', async (req: Request, res: Response) => {

@@ -5,6 +5,8 @@ import { useContent } from './hooks/useContent';
 import { HomePage } from './pages/home/Home';
 import { BlogPage } from './pages/blog/BlogPage';
 import { ArticlePage } from './pages/blog/ArticlePage';
+import { LoginPage } from './pages/auth/LoginPage';
+import { SignupPage } from './pages/auth/SignupPage';
 import { Routes, Route } from 'react-router-dom';
 
 function scrollToContact() {
@@ -24,6 +26,8 @@ function App() {
         <Route path="/" element={<HomePage content={content} />} />
         <Route path="/blog" element={<BlogPage articles={content.articles} />} />
         <Route path="/blog/:id" element={<ArticlePage articles={content.articles} />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
       </Routes>
       <Footer />
       <div className="status">
