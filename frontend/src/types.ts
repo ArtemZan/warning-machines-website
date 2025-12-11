@@ -17,6 +17,8 @@ export type Article = {
   title: string;
   summary: string;
   imageAlt: string;
+  heroImage?: string;
+  body?: string;
 };
 
 export type SiteContent = {

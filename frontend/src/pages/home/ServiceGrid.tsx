@@ -1,9 +1,3 @@
-import type { Service } from '../../types';
-
-type ServiceGridProps = {
-  services: Service[];
-};
-
 const services = [
   {
     id: 'pcb',

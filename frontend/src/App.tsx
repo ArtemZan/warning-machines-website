@@ -3,6 +3,9 @@ import { Footer } from './components/Footer';
 import { NavBar } from './components/NavBar';
 import { useContent } from './hooks/useContent';
 import { HomePage } from './pages/home/Home';
+import { BlogPage } from './pages/blog/BlogPage';
+import { ArticlePage } from './pages/blog/ArticlePage';
+import { Routes, Route } from 'react-router-dom';
 
 function scrollToContact() {
   const contact = document.getElementById('contact');
@@ -17,7 +20,11 @@ function App() {
   return (
     <div className="page">
       <NavBar onCTAClick={scrollToContact} />
-      <HomePage content={content} />
+      <Routes>
+        <Route path="/" element={<HomePage content={content} />} />
+        <Route path="/blog" element={<BlogPage articles={content.articles} />} />
+        <Route path="/blog/:id" element={<ArticlePage articles={content.articles} />} />
+      </Routes>
       <Footer />
       <div className="status">
         {loading ? <span>Loading live content…</span> : null}

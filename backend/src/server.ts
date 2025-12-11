@@ -22,6 +22,8 @@ type Article = {
   title: string;
   summary: string;
   imageAlt: string;
+  heroImage?: string;
+  body?: string;
 };
 
 const hero = {
@@ -47,31 +49,39 @@ const highlights = [
 ];
 
 const articles: Article[] = [
-  {
-    id: 'hidden-engine',
-    title: 'The Hidden Engine Behind Every Smart Product',
-    summary: 'How robust firmware and electronics underpin product reliability.',
-    imageAlt: 'Close-up of a green PCB with firmware tools.',
-  },
-  {
-    id: 'health-mvp',
-    title: 'From Care to Cure: Craft Your Health MVP Story!',
-    summary: 'Building medical prototypes with speed and compliance in mind.',
-    imageAlt: 'Medical device prototype with 3D-printed casing and PCB.',
-  },
-  {
-    id: 'idea-to-investment',
-    title: 'From Idea to Investment: Build Your Product MVP!',
-    summary: 'Taking concepts to investor-ready prototypes efficiently.',
-    imageAlt: 'Product MVP comparison shots.',
-  },
-  {
-    id: 'cnc-vs-3d',
-    title: 'CNC Machines vs 3D Printers: Which Is Better for Prototyping?',
-    summary: 'Choosing the right process for speed, finish, and cost.',
-    imageAlt: 'Workshop with CNC and 3D printing equipment.',
-  },
-];
+{
+  id: 'firmware',
+  title: 'The Hidden Engine Behind Every Smart Product',
+  summary: 'How robust firmware and electronics underpin product reliability.',
+  imageAlt: 'Close-up of a green PCB with firmware tools.',
+  heroImage: '/images/articles/firmware.jpg',
+  body: `Smart products rely on resilient electronics and firmware. Robust architectures, EMI-aware layouts, and testable firmware ensure reliability under real-world stress. We emphasize early validation, fault-tolerant design, and observability so products behave predictably in the field.`,
+},
+{
+  id: 'health-mvp',
+  title: 'From Care to Cure: Craft Your Health MVP Story!',
+  summary: 'Building medical prototypes with speed and compliance in mind.',
+  imageAlt: 'Medical device prototype with 3D-printed casing and PCB.',
+  heroImage: '/images/articles/care-to-cure.png',
+  body: `Healthcare MVPs demand rapid iteration without sacrificing safety. We combine additive manufacturing, CNC, and embedded prototyping to iterate enclosures and electronics fast, while planning for verification, documentation, and regulatory pathways from day one.`,
+},
+{
+  id: 'idea-to-investment',
+  title: 'From Idea to Investment: Build Your Product MVP!',
+  summary: 'Taking concepts to investor-ready prototypes efficiently.',
+  imageAlt: 'Product MVP comparison shots.',
+  heroImage: '/images/articles/idea-to-investment.png',
+  body: `Investor-ready MVPs balance polish with proof. We focus on functional prototypes that demonstrate core value, manufacturability, and a clear path to scale: validated architecture, tight BOM control, and a build story investors can trust.`,
+},
+{
+  id: 'cnc-vs-3d',
+  title: 'CNC Machines vs 3D Printers: Which Is Better for Prototyping?',
+  summary: 'Choosing the right process for speed, finish, and cost.',
+  imageAlt: 'Workshop with CNC and 3D printing equipment.',
+  heroImage: '/images/articles/cnc-vs-3d.png',
+  body: `CNC delivers precision, material strength, and finish; 3D printing wins on speed and geometry freedom. We help teams pick the right process per part—often a hybrid—considering tolerances, surface requirements, cost-per-part, and lead time.`,
+}
+]
 
 const smtpHost = process.env.SMTP_HOST;
 const smtpPort = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : undefined;

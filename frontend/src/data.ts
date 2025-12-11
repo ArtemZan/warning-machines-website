@@ -24,30 +24,7 @@ export const highlights: string[] = [
 ];
 
 export const articles: Article[] = [
-  {
-    id: 'hidden-engine',
-    title: 'The Hidden Engine Behind Every Smart Product',
-    summary: 'How robust firmware and electronics underpin product reliability.',
-    imageAlt: 'Close-up of a green PCB with firmware tools.',
-  },
-  {
-    id: 'health-mvp',
-    title: 'From Care to Cure: Craft Your Health MVP Story!',
-    summary: 'Building medical prototypes with speed and compliance in mind.',
-    imageAlt: 'Medical device prototype with 3D-printed casing and PCB.',
-  },
-  {
-    id: 'idea-to-investment',
-    title: 'From Idea to Investment: Build Your Product MVP!',
-    summary: 'Taking concepts to investor-ready prototypes efficiently.',
-    imageAlt: 'Product MVP comparison shots.',
-  },
-  {
-    id: 'cnc-vs-3d',
-    title: 'CNC Machines vs 3D Printers: Which Is Better for Prototyping?',
-    summary: 'Choosing the right process for speed, finish, and cost.',
-    imageAlt: 'Workshop with CNC and 3D printing equipment.',
-  },
+  
 ];
 
 export const slides: Slide[] = [
