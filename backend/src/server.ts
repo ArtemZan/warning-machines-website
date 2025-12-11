@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express, { type Request, type Response } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
@@ -90,6 +91,8 @@ const smtpPass = process.env.SMTP_PASS;
 const smtpSecure = process.env.SMTP_SECURE === 'true';
 const mailFrom = process.env.MAIL_FROM;
 const mailTo = process.env.MAIL_TO;
+
+console.log(process.env.SMTP_HOST, process.env.SMTP_PORT, process.env.SMTP_USER, process.env.SMTP_PASS, process.env.SMTP_SECURE, process.env.MAIL_FROM, process.env.MAIL_TO);
 
 const transporter = smtpHost && smtpPort && smtpUser && smtpPass
   ? nodemailer.createTransport({

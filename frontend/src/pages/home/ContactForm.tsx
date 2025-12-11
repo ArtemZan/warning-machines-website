@@ -17,6 +17,12 @@ export function ContactForm() {
     setStatus('loading');
     setError(undefined);
 
+    if (!agreement) {
+      setStatus('error');
+      setError('You must agree to the NDA and site policies.');
+      return;
+    }
+
     try {
       const result = await submitContact({ name, email, message, agreement });
       if (result.success) {
@@ -66,7 +72,12 @@ export function ContactForm() {
           <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="How can we help?" required />
         </label>
         <label className="checkbox">
-          <input type="checkbox" checked={agreement} onChange={(e) => setAgreement(e.target.checked)} />
+          <input
+            type="checkbox"
+            checked={agreement}
+            onChange={(e) => setAgreement(e.target.checked)}
+            required
+          />
           <span>I agree to the NDA and site policies</span>
         </label>
         <div className="form__actions">
